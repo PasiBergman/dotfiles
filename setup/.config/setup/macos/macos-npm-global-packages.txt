@@ -1,0 +1,10 @@
+/Users/pasi/Library/Application Support/fnm/node-versions/v18.17.1/installation/lib
+├── corepack@0.18.0
+├── eslint_d@12.2.1
+├── markdownlint-cli@0.35.0
+├── neovim@4.10.1
+├── npm@9.6.7
+├── prettier@3.0.3
+├── write-good@1.0.8
+└── yarn@1.22.19
+

@@ -1,0 +1,22 @@
+local wezterm = require("wezterm")
+local config = {}
+
+config.font = wezterm.font("JetBrainsMono Nerd Font")
+--config.font = wezterm.font("Menlo")
+-- config.font = wezterm.font("FiraCode Nerd Font")
+config.font_size = 13.0
+-- config.color_scheme = "tokyonight-storm"
+config.color_scheme = "catppuccin-mocha"
+
+-- config.enable_kitty_keyboard = true
+--
+-- Allow use of left Option key on macOS to send regular keys, eg Shift-Option-8 -> '{' on Finnish keyboard
+config.send_composed_key_when_left_alt_is_pressed = true
+
+config.keys = {
+	-- CTRL-SHIFT-l activates the debug overlay
+	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
+}
+--]]
+
+return config

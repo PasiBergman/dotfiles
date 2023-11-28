@@ -1,0 +1,3 @@
+lazygit/**/*.patch
+macos-defaults.txt
+*.plist
