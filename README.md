@@ -30,7 +30,7 @@ cd $DOTFILES_DIR
 #Link one directory
 stow <directory>
 # Link all
-# find . -type d -maxdepth 0 -exec stow -nv {} \;
+# find . -type d -maxdepth 0 -exec stow {} \;
 
 
 ```
