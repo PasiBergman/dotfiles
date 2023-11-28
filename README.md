@@ -24,4 +24,13 @@ REPO_URL="git@github.com:PasiBergman/dotfiles.git"
 # REPO_URL="https://github.com/PasiBergman/dotfiles.git"
 
 git clone $REPO_URL $DOTFILES_DIR
+
+cd $DOTFILES_DIR
+
+#Link one directory
+stow <directory>
+# Link all
+# find . -type d -maxdepth 0 -exec stow -nv {} \;
+
+
 ```
