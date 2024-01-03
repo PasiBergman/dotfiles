@@ -135,26 +135,14 @@ packages() {
 	SETUP_FOLDER="$HOME/.config/setup/macos"
 	[ -d "$SETUP_FOLDER" ] || mkdir -p "$SETUP_FOLDER"
 
-	brew bundle dump --file="$SETUP_FOLDER/macos-brew-bundle-dump.txt" --force
+	brew bundle dump --file="${SETUP_FOLDER}/macos-brew-bundle-dump.txt" --force
 	echo "Brew bundle dump"
 	echo "----------------------------------------------"
 	cat "$SETUP_FOLDER/macos-brew-bundle-dump.txt"
-	# echo ""
-	# echo "List of brew bundle dump"
-	# echo "----------------------------------------------"
-	# brew leaves | tee "${SETUP_FOLDER}/macos-brew-leaves.txt"
-	# echo ""
-	# echo "List of brew --cask"
-	# echo "----------------------------------------------"
-	# brew list --cask -1 | tee "${SETUP_FOLDER}/macos-brew-list--cask-1.txt"
 	echo ""
 	echo "Copy macOS settings"
 	echo "----------------------------------------------"
 	defaults read | tee "${SETUP_FOLDER}/macos-defaults.txt"
-	echo ""
-	echo "List of Setapp apps"
-	echo "----------------------------------------------"
-	ls -1 /Applications/Setapp | grep "\.app" | tee "${SETUP_FOLDER}/macos-setapp.txt"
 	echo ""
 	echo "List of NPM global applications"
 	echo "----------------------------------------------"
@@ -179,16 +167,16 @@ packages-install() {
 	[ -d "$SETUP_FOLDER" ] || mkdir -p "$SETUP_FOLDER"
 	echo ""
 	echo "Installing Homebrew apps"
-	brew bundle --file "$SETUP_FOLDER/macos-brew-bundle-dump.txt"
+	brew bundle --file "${SETUP_FOLDER}/macos-brew-bundle-dump.txt"
 }
 
 packages-cleanup() {
 	SETUP_FOLDER="$HOME/.config/setup/macos"
 	[ -d "$SETUP_FOLDER" ] || mkdir -p "$SETUP_FOLDER"
 
-	brew bundle cleanup --file "$SETUP_FOLDER/macos-brew-bundle-dump.txt" --verbose
+	brew bundle cleanup --file "${SETUP_FOLDER}/macos-brew-bundle-dump.txt" --verbose
 	read -s -k -r '?Press any key to continue with uninstallation or ctrl-c to stop.'
-	brew bundle cleanup --file "$SETUP_FOLDER/macos-brew-bundle-dump.txt" --verbose --force
+	brew bundle cleanup --file "${SETUP_FOLDER}/macos-brew-bundle-dump.txt" --verbose --force
 	read -s -k -r '?Press any key to continue with uninstallation of Homebrew or ctrl-c to stop.'
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 }

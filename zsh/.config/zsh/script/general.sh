@@ -65,8 +65,8 @@ alias lazygit="lazygit -ucd ${HOME}/.config/lazygit"
 alias lg="lazygit -ucd ${HOME}/.config/lazygit"
 
 # Update LunarVim
-alias update-lvim="cd ~/.local/share/lunarvim/lvim && git pull; cd -"
-alias fetch-lvim="cd ~/.local/share/lunarvim/lvim && git fetch upstream && git merge upstream/rolling; cd -"
+# alias update-nvim="cd ~/.local/share/lunarvim/lvim && git pull; cd -"
+# alias fetch-lvim="cd ~/.local/share/lunarvim/lvim && git fetch upstream && git merge upstream/rolling; cd -"
 
 # fzh
 [ -f "${HOME}/.config/zsh/script/fzh.sh" ] && source "${HOME}/.config/zsh/script/fzh.sh"

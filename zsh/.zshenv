@@ -28,7 +28,7 @@ setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks before recording entry
 setopt HIST_VERIFY            # Don't execute immediately upon history expansion.
 setopt HIST_BEEP              # Beep when accessing nonexistent history.
 # Default texteditor
-export EDITOR=lvim
+export EDITOR=nvim
 # .NET, dotnet, Azure Functions, VSCode
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
@@ -38,11 +38,12 @@ export DOTNET_ROOT="/usr/local/share/dotnet"
 export VSCODE=code
 # Homebrew / brew
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_BUNDLE_FILE="${HOME}/.config/setup/macos/macos-brew-bundle-dump.txt"
 # Node & Nvm - NOTE! nvm has been replaced by fnm
 # export NODE_VERSION="lts"
 # export NVM_DIR="$HOME/.nvm"
 # Manual
-export MANPAGER="lvim +Man!"
+export MANPAGER="nvim +Man!"
 export MANWIDTH=999
 # Temporary files direcotry
 export TMP="/tmp"

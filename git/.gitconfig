@@ -30,7 +30,7 @@
 [init]
   defaultBranch = main
 [mergetool "vimdiff"]
-  path = lvim
+  path = nvim
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
