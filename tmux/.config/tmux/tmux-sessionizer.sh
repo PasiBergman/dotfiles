@@ -1,30 +1,33 @@
 #!/usr/bin/env bash
 
-WINDOW_EDITOR="Editor"
-WINDOW_GIT="Shell"
-EDITOR="nvim"
+WINDOW_1_NAME="Editor"
+WINDOW_2_NAME="Shell"
+
+if [[ -n "${EDITOR}" ]]; then
+	EDITOR="nvim"
+fi
 
 ZSH="$(which zsh)"
 
 start_tmux_session() {
 	S_NAME="$1"
 	P_DIR="$2"
-	tmux new-session -ds "$S_NAME" -n "$WINDOW_EDITOR" -c "cd ~"
-	tmux send-keys -t "$S_NAME" "cd '${P_DIR}' && clear && git fetch --all" C-m
-	tmux split-window -t "$S_NAME" -v -p 80 -c "cd ~"
-	tmux send-keys -t "$S_NAME" "cd '${P_DIR}' && ${EDITOR}" C-m
-	tmux new-window -t "$S_NAME" -c "cd ~" -n "$WINDOW_GIT" "$ZSH"
-	tmux send-keys -t "$S_NAME" "cd '${P_DIR}' && eslint_d restart" C-m
+	tmux new-session -ds "${S_NAME}" -n "$WINDOW_1_NAME" -c "${ZSH} && cd ~" -x - -y -
+	tmux send-keys -t "${S_NAME}" "cd '${P_DIR}' && clear && git fetch --all" C-m
+	tmux split-window -t "${S_NAME}" -v -l 83 -c "cd ~"
+	tmux send-keys -t "${S_NAME}" "cd '${P_DIR}' && ${EDITOR} && clear" C-m
+	tmux new-window -t "${S_NAME}" -c "cd ~" -n "${WINDOW_2_NAME}" "${ZSH}"
+	tmux send-keys -t "${S_NAME}" "cd '${P_DIR}' && clear && bash ${HOME}/.config/zsh/script/truecolor-test.sh && echo '' && neofetch" C-m
 	# tmux send-keys -t "$S_NAME" "lazygit" C-m
 	# If not in a tmux session, attach to the session
 	# else switch client to the session
 	if [[ -z "$TMUX" ]]; then
 		tmux attach-session -t "$S_NAME" \; \
-			select-window -t "$WINDOW_EDITOR" \; \
+			select-window -t "$WINDOW_1_NAME" \; \
 			select-pane -t 0 \;
 	else
 		tmux switch -t "$S_NAME" \; \
-			select-window -t "$WINDOW_EDITOR" \; \
+			select-window -t "$WINDOW_1_NAME" \; \
 			select-pane -t 0 \;
 	fi
 }
