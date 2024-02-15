@@ -1,10 +1,12 @@
 lastupdatecheck: 0
 recentrepos:
-- /Users/pasi/.dotfiles
-- /Users/pasi/Code/Work/Keva/OET-2.0/oet-api
-- /Users/pasi/Code/Work/Keva/OET-2.0/oet-ui
-- /Users/pasi/Code/Work/Keva/ViPa-2.0/vipa-api
 - /Users/pasi/Code/Work/Keva/Tyokykypolkuja-oppimispeli/WebUI
+- /Users/pasi/Code/Work/Keva/OET-2.0/oet-ui
+- /Users/pasi/Code/Work/Keva/Tyokykypolkuja-oppimispeli/Infra
+- /Users/pasi/Code/Work/Keva/OET-2.0/oet-api
+- /Users/pasi/Code/Work/Keva/ViPa-2.0/vipa-api
+- /Users/pasi/Code/Work/Keva/Anonymisointi/Anonymisointipalvelu
+- /Users/pasi/.dotfiles
 - /Users/pasi/Code/Work/Keva/Toolkits/AuthMockService
 - /Users/pasi/Code/Work/Keva/Tyokykypolkuja-oppimispeli/WebAPI
 startuppopupversion: 5

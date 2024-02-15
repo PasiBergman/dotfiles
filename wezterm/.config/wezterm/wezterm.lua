@@ -17,6 +17,8 @@ config.keys = {
 	-- CTRL-SHIFT-l activates the debug overlay
 	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
---]]
+
+config.initial_cols = 200
+config.initial_rows = 80
 
 return config
