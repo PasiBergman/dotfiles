@@ -27,10 +27,7 @@ git clone $REPO_URL $DOTFILES_DIR
 
 cd $DOTFILES_DIR
 
-#Link one directory
+#Link a directory
 stow <directory>
-# Link all
-# find . -type d -maxdepth 0 -exec stow {} \;
-
 
 ```

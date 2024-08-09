@@ -1,3 +1,4 @@
 lazygit/**/*.patch
 macos-defaults.txt
 *.plist
+.DS_Store

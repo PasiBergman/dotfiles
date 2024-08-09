@@ -81,6 +81,5 @@ if (which fnm 1>/dev/null 2>&1); then
   eval "$(fnm env --use-on-cd)"
 fi
 
-# Add locally installed fzf to path - if found
-[ -d "$HOME/.fzf/bin" ] && export PATH="$HOME/.fzf/bin:$PATH"
-
+# Apply FZF config if it exists
+[ -d "${HOME}/.config/fzf/fzf-config.sh" ] && source "${HOME}/.config/fzf/fzf-config.sh"
