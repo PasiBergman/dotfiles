@@ -1,4 +1,10 @@
 
+# If starship is installed, use it
+if which starship > /dev/null
+then
+  return
+fi
+
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 precmd() {

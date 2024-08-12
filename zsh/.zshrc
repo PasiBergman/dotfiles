@@ -58,8 +58,7 @@ fi
 	source "$ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # Terminal true color test
-[ -z "$TMUX" ] && [ -f $HOME/.config/zsh/script/truecolor-test.sh ] && $HOME/.config/zsh/script/truecolor-test.sh
-
+[ -z "$TMUX" ] && [ -f $HOME/.config/zsh/script/truecolor-test.sh ] && /bin/bash $HOME/.config/zsh/script/truecolor-test.sh
 # If not TMUX session and neofetch is installed, show system info
 [ -z "$TMUX" ] && which neofetch 1>/dev/null 2>&1 && echo " " && neofetch
 
