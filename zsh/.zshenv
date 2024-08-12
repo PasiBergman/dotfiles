@@ -50,14 +50,16 @@ export TMP="/tmp"
 # Parallels
 export def_sysconfdir=/etc/init.d
 # i3 blocks
-export I3BLOCKS_SCRIPT_DIR=$HOME/.config/i3/i3blocks/scripts
+export I3BLOCKS_SCRIPT_DIR="${HOME}/.config/i3/i3blocks/scripts"
 # pfetch
 export PF_INFO="ascii title os kernel uptime pkgs memory shell editor palette"
 export PF_ALIGN="12"
 #
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_CONFIG_HOME="${HOME}/.config"
+
+export STARSHIP_CONFIG="${HOME}/.config/starship/starship.toml"
 
 setopt BANG_HIST              # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY       # Write the history file in the ":start:elapsed;command" format.
