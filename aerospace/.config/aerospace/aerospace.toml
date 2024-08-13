@@ -52,12 +52,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 10
-inner.vertical =   10
-outer.left =       10
-outer.bottom =     10
-outer.top =        10
-outer.right =      10
+inner.horizontal = 6
+inner.vertical =   6
+outer.left =       6
+outer.bottom =     6
+outer.top =        6
+outer.right =      6
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -84,7 +84,7 @@ outer.right =      10
 # alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-slash = 'layout tiles horizontal vertical'
+alt-period = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -100,28 +100,34 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-ctrl-l = 'resize smart -50'
+alt-ctrl-h = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-shift-alt-1 = 'workspace 1'
-shift-alt-2 = 'workspace 2'
-shift-alt-3 = 'workspace 3'
-shift-alt-4 = 'workspace 4'
-shift-alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-shift-alt-b = 'workspace B'
-shift-alt-c = 'workspace C'
-shift-alt-d = 'workspace D'
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-b = 'workspace B' # Browser (Safari)
+alt-c = 'workspace C' # Chat (Microsoft Teams, Slack)
+alt-d = 'workspace D' # Development
+alt-m = 'workspace M' # Mail (Outlook, Mail)
+alt-p = 'workspace P' # 1password
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 ctrl-alt-shift-1 = 'move-node-to-workspace 1'
 ctrl-alt-shift-2 = 'move-node-to-workspace 2'
 ctrl-alt-shift-3 = 'move-node-to-workspace 3'
 ctrl-alt-shift-4 = 'move-node-to-workspace 4'
-ctrl-alt-shift-a = 'move-node-to-workspace A'
-ctrl-alt-shift-b = 'move-node-to-workspace B'
-ctrl-alt-shift-c = 'move-node-to-workspace C'
-ctrl-alt-shift-d = 'move-node-to-workspace D'
+ctrl-alt-shift-5 = 'move-node-to-workspace 5'
+ctrl-alt-shift-6 = 'move-node-to-workspace 6'
+ctrl-alt-shift-b = 'move-node-to-workspace B' # Browser (Safari)
+ctrl-alt-shift-c = 'move-node-to-workspace C' # Chat (Microsoft Teams, Slack)
+ctrl-alt-shift-d = 'move-node-to-workspace D' # Development
+ctrl-alt-shift-m = 'move-node-to-workspace M' # Mail (Outlook, Mail)
+ctrl-alt-shift-p = 'move-node-to-workspace P' # 1password
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 ctrl-alt-tab = 'workspace-back-and-forth'
@@ -144,3 +150,54 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+# Safaari browser always to B (Browser) workspace
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari'
+run = 'move-node-to-workspace B'
+
+# Microsoft Teams always to C (Chat) workspace
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace C'
+
+# Slack always to C (Chat) workspace
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace C'
+
+# Google Chrome always to D (Development) workspace
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = 'move-node-to-workspace D'
+
+# WezTerm always to D (Development) workspace
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = 'move-node-to-workspace D'
+
+# Apple Mail always to M (Mail) workspace
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace M'
+
+# Microsoft Outlook always to M (Mail) workspace
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'com.1password.1password'
+run = 'move-node-to-workspace P'
+
+[workspace-to-monitor-force-assignment]
+1 = 'Build-in'
+2 = 'Build-in'
+3 = 'Build-in'
+4 = 'Build-in'
+5 = 'BenQ'
+B = 'Build-in'
+C = 'BenQ'
+D = 'BenQ'
+M = 'BenQ'
+P = 'Build-in'

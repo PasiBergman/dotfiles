@@ -3,17 +3,8 @@ $directory\
 $git_branch\
 $git_status\
 $fill\
-$python\
-$lua\
 $nodejs\
-$golang\
-$haskell\
-$rust\
-$ruby\
 $azure\
-$aws\
-$docker_context\
-$jobs\
 $cmd_duration\
 $line_break\
 $character"""

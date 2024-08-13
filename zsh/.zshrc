@@ -61,7 +61,7 @@ fi
 [ -z "$TMUX" ] && [ -f $HOME/.config/zsh/script/truecolor-test.sh ] && /bin/bash $HOME/.config/zsh/script/truecolor-test.sh
 # If not TMUX session and neofetch or fastfetch is installed, show system info
 [ -z "$TMUX" ] && which neofetch 1>/dev/null 2>&1 && echo " " && neofetch
-[ -z "$TMUX" ] && which fastfetch 1>/dev/null 2>&1 && echo " " && fastfetch
+[ -z "$TMUX" ] && which fastfetch 1>/dev/null 2>&1 && echo " " && fastfetch && alias neofetch="fastfetch"
 
 # Zoxide, if exists
 if command -v zoxide &>/dev/null
