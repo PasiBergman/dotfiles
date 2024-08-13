@@ -1,4 +1,4 @@
-/Users/pasi/Library/Application Support/fnm/node-versions/v18.19.0/installation/lib
-├── corepack@0.22.0
-└── npm@10.2.3
+/Users/bergmanpasi/.local/share/fnm/node-versions/v16.20.2/installation/lib
+├── corepack@0.17.0
+└── npm@8.19.4
 

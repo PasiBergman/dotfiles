@@ -42,7 +42,7 @@ bindkey -M menuselect 'l' vi-forward-char
 
 # macOS vs. Linux
 if [[ $(uname) == "Darwin" ]]; then
-	ZSH_PLUGINS_DIR="/opt/homebrew/share"
+  ZSH_PLUGINS_DIR="$(brew --prefix)/share"
 elif [[ $(uname -n) == "lakka" ]]; then
 	ZSH_PLUGINS_DIR="$HOME/.local/share"
 else
@@ -59,8 +59,9 @@ fi
 
 # Terminal true color test
 [ -z "$TMUX" ] && [ -f $HOME/.config/zsh/script/truecolor-test.sh ] && /bin/bash $HOME/.config/zsh/script/truecolor-test.sh
-# If not TMUX session and neofetch is installed, show system info
+# If not TMUX session and neofetch or fastfetch is installed, show system info
 [ -z "$TMUX" ] && which neofetch 1>/dev/null 2>&1 && echo " " && neofetch
+[ -z "$TMUX" ] && which fastfetch 1>/dev/null 2>&1 && echo " " && fastfetch
 
 # Zoxide, if exists
 if command -v zoxide &>/dev/null
