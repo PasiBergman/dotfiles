@@ -105,9 +105,9 @@ alt-ctrl-h = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
+shift-alt-2 = 'workspace 2' # alt-2 produces @ character in Fi/Sv keyboard layout
 alt-3 = 'workspace 3'
-alt-4 = 'workspace 4'
+shift-alt-4 = 'workspace 4' # alt-4 produces character in Fi/Sv keyboard layout
 alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
 alt-b = 'workspace B' # Browser (Safari)
@@ -135,7 +135,7 @@ ctrl-alt-tab = 'workspace-back-and-forth'
 ctrl-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
+alt-shift-up = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -186,10 +186,6 @@ run = 'move-node-to-workspace M'
 if.app-id = 'com.microsoft.Outlook'
 run = 'move-node-to-workspace M'
 
-[[on-window-detected]]
-if.app-id = 'com.1password.1password'
-run = 'move-node-to-workspace P'
-
 [workspace-to-monitor-force-assignment]
 1 = 'Build-in'
 2 = 'Build-in'
@@ -201,3 +197,4 @@ C = 'BenQ'
 D = 'BenQ'
 M = 'BenQ'
 P = 'Build-in'
+S = 'Build-in'

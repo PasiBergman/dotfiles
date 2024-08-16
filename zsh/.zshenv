@@ -27,6 +27,11 @@ setopt HIST_SAVE_NO_DUPS      # Don't write duplicate entries in the history fil
 setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY            # Don't execute immediately upon history expansion.
 setopt HIST_BEEP              # Beep when accessing nonexistent history.
+
+# Command history search backward and forward
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
 # Default texteditor
 export EDITOR=nvim
 # .NET, dotnet, Azure Functions, VSCode
