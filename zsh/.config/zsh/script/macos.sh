@@ -5,7 +5,7 @@
 if [[ "$(uname)" != "Darwin" ]]; then return; fi
 
 # Homebrew
-eval "$(/usr/local/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Starship
 if which starship >/dev/null; then

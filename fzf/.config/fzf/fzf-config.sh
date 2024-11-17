@@ -2,4 +2,4 @@
 [ -d "$HOME/.fzf/bin" ] && export PATH="$HOME/.fzf/bin:$PATH"
 
 # Set up fzf key bindings and fuzzy completion
-eval "$(fzf --zsh)"
+source <(fzf --zsh)

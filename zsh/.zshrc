@@ -82,4 +82,4 @@ if (which fnm 1>/dev/null 2>&1); then
 fi
 
 # Apply FZF config if it exists
-[ -d "${HOME}/.config/fzf/fzf-config.sh" ] && source "${HOME}/.config/fzf/fzf-config.sh"
+[ -f "${HOME}/.config/fzf/fzf-config.sh" ] && source "${HOME}/.config/fzf/fzf-config.sh"

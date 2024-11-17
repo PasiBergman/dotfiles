@@ -84,7 +84,7 @@ keybinding:
         scrollDownMain-alt1: J
         scrollUpMain-alt2: <c-b>
         scrollDownMain-alt2: <c-f>
-        executeCustomCommand: ":"
+        executeShellCommand: ":"
         createRebaseOptionsMenu: m
         pushFiles: P
         pullFiles: p

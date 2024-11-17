@@ -22,9 +22,9 @@ enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
-# The 'accordion-padding' specifies the size of accordion padding
+# The 'accordion-padding' specifies the size of accordion padding	
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 20
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -104,28 +104,20 @@ alt-ctrl-l = 'resize smart -50'
 alt-ctrl-h = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
-shift-alt-2 = 'workspace 2' # alt-2 produces @ character in Fi/Sv keyboard layout
-alt-3 = 'workspace 3'
-shift-alt-4 = 'workspace 4' # alt-4 produces character in Fi/Sv keyboard layout
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
+alt-1 = 'workspace 1' # Misc
 alt-b = 'workspace B' # Browser (Safari)
 alt-c = 'workspace C' # Chat (Microsoft Teams, Slack)
+alt-e = 'workspace E' # Editor (Coteditor, VS Code, ...)
 alt-d = 'workspace D' # Development
 alt-m = 'workspace M' # Mail (Outlook, Mail)
 alt-p = 'workspace P' # 1password
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-ctrl-alt-shift-1 = 'move-node-to-workspace 1'
-ctrl-alt-shift-2 = 'move-node-to-workspace 2'
-ctrl-alt-shift-3 = 'move-node-to-workspace 3'
-ctrl-alt-shift-4 = 'move-node-to-workspace 4'
-ctrl-alt-shift-5 = 'move-node-to-workspace 5'
-ctrl-alt-shift-6 = 'move-node-to-workspace 6'
+ctrl-alt-shift-1 = 'move-node-to-workspace 1' # Misc
 ctrl-alt-shift-b = 'move-node-to-workspace B' # Browser (Safari)
 ctrl-alt-shift-c = 'move-node-to-workspace C' # Chat (Microsoft Teams, Slack)
 ctrl-alt-shift-d = 'move-node-to-workspace D' # Development
+ctrl-alt-shift-e = 'move-node-to-workspace E' # Editor (Coteditor, VS Code, ...)
 ctrl-alt-shift-m = 'move-node-to-workspace M' # Mail (Outlook, Mail)
 ctrl-alt-shift-p = 'move-node-to-workspace P' # 1password
 
@@ -150,6 +142,10 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+#
+# List app id's using 'aerospace list-apps' on command line
+#
 
 # Safaari browser always to B (Browser) workspace
 [[on-window-detected]]
@@ -186,15 +182,15 @@ run = 'move-node-to-workspace M'
 if.app-id = 'com.microsoft.Outlook'
 run = 'move-node-to-workspace M'
 
+[[on-window-detected]]
+if.app-id = 'com.coteditor.CotEditor'
+run = 'move-node-to-workspace E'
+
 [workspace-to-monitor-force-assignment]
 1 = 'Build-in'
-2 = 'Build-in'
-3 = 'Build-in'
-4 = 'Build-in'
-5 = 'BenQ'
 B = 'Build-in'
 C = 'BenQ'
 D = 'BenQ'
+E = 'Build-in'
 M = 'BenQ'
 P = 'Build-in'
-S = 'Build-in'
