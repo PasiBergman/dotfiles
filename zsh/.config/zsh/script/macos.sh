@@ -36,8 +36,6 @@ export PATH="/usr/local/share/dotnet/x64:$PATH"
 alias pcap="sudo tcpdump -i en0 -s 0 -B 524288 -w ${HOME}/Desktop/DumpFile01.pcap"
 # View captured packed file
 alias view-pcap="tcpdump -s 0 -n -e -x -vvv -r ${HOME}/Desktop/DumpFile01.pcap"
-# Colors
-alias ls="ls -G"
 # UUID/GUID
 alias guid=uuidgen
 alias uuid=uuidgen

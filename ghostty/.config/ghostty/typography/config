@@ -1,0 +1,8 @@
+#
+# List font-families with `ghostty +list-fonts`
+#
+# Set font family.
+font-family = JetBrainsMono Nerd Font Mono
+
+# Disable ligatures with -calt, -liga or -dlig
+font-feature = -calt

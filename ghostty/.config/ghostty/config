@@ -1,0 +1,3 @@
+config-file = keybindings/config
+config-file = themes/config
+config-file = typography/config

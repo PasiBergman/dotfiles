@@ -1,0 +1,11 @@
+# 
+# List themes with `ghostty +list-themes`
+#
+#theme = catppuccin-mocha
+theme = dark:catppuccin-mocha,light:catppuccin-latte
+
+# macOS titlebar 
+macos-titlebar-style=transparent
+
+# Mouse cursor behaviour
+mouse-hide-while-typing = true

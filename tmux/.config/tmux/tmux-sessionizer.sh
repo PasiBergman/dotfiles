@@ -39,9 +39,9 @@ if [[ $# -eq 1 ]]; then
   PROJECT_DIR=$1
 else
   # Find all directories containing .git repoistory/folder
-  PROJECT_DIR=$(find ~/.config ~/Code/Personal ~/Code/Work -maxdepth 4 -name ".git" -type d |
+  PROJECT_DIR=$(find ~/.config ~/Code/Personal ~/Code/Work ~/.dotfiles ~/.config -maxdepth 5 -name ".git" -type d |
     sed 's/\/\.git//' |
-    fzf --height 40% --layout=reverse --preview 'tree -C {} | head -200')
+    fzf -i --height 40% --layout=reverse --preview 'tree -C {} | head -200')
 fi
 
 if [[ -z $PROJECT_DIR ]]; then

@@ -172,6 +172,14 @@ run = 'move-node-to-workspace D'
 if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace D'
 
+# Ghostty always to D (Development) workspace
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = [
+  'layout tiling',
+  'move-node-to-workspace D'
+]
+
 # Apple Mail always to M (Mail) workspace
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'
@@ -182,9 +190,13 @@ run = 'move-node-to-workspace M'
 if.app-id = 'com.microsoft.Outlook'
 run = 'move-node-to-workspace M'
 
+# Coteditor always to E (Editor) workspace
 [[on-window-detected]]
 if.app-id = 'com.coteditor.CotEditor'
-run = 'move-node-to-workspace E'
+run = [
+  'layout tiling',
+  'move-node-to-workspace E'
+]
 
 [workspace-to-monitor-force-assignment]
 1 = 'Build-in'
@@ -194,3 +206,4 @@ D = 'BenQ'
 E = 'Build-in'
 M = 'BenQ'
 P = 'Build-in'
+O = 'Build-in'

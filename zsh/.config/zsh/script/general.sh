@@ -20,7 +20,7 @@ sha256() {
 # =====================
 
 # Reverse aliases. Open these filetypes with nvim
-if which nvim &>/dev/null ; 
+if command -v nvim &>/dev/null
 then
   alias -s {cs,ts,js,vue,html,htm,md,json,yml,yaml,txt,sh}="nvim"
 
@@ -42,36 +42,37 @@ alias sää='curl -s "https://wttr.in/Kukkumäki,Espoo?MF1&lang=fi"'
 # alias l=lvim
 
 # Fzf
-alias historyfzf="history 0 | fzf"
-alias fzfhistory="history 0 | fzf"
-alias fzfhist="history 0 | fzf"
-batfz() {
-    bat "$( fd -t file | fzf )"
-}
-
-# exa
-if command -v exa &>/dev/null
+if command -v fzf &>/dev/null
 then
-  alias ls="exa"
-  alias ll="exa --all -al"
-  alias la="exa --all -al"
+  alias historyfzf="history 0 | fzf"
+  alias fzfhistory="history 0 | fzf"
+  alias fzfhist="history 0 | fzf"
+  batfz() {
+      bat "$( fd -t file | fzf )"
+  }
+  # fzh
+  [ -f "${HOME}/.config/zsh/script/fzh.sh" ] && source "${HOME}/.config/zsh/script/fzh.sh"
+  # fzd
+  [ -f "${HOME}/.config/zsh/script/fzd.sh" ] && source "${HOME}/.config/zsh/script/fzd.sh"
+fi
+
+# eza
+if command -v eza &>/dev/null
+then
+  alias ls="eza --icons --group-directories-first"
+  alias ll="eza --icons --group-directories-first -l"
+  alias la="eza --icons --group-directories-first -l --all"
 fi
 
 # dotnet
 alias dotnetclean="find . -name bin -exec rm -R -f {} \; 2>/dev/null && find . -name obj -exec rm -R -f {} \; 2>/dev/null && dotnet clean 2>/dev/null"
 
 # Lazygit
-alias lazygit="lazygit -ucd ${HOME}/.config/lazygit"
-alias lg="lazygit -ucd ${HOME}/.config/lazygit"
-
-# Update LunarVim
-# alias update-nvim="cd ~/.local/share/lunarvim/lvim && git pull; cd -"
-# alias fetch-lvim="cd ~/.local/share/lunarvim/lvim && git fetch upstream && git merge upstream/rolling; cd -"
-
-# fzh
-[ -f "${HOME}/.config/zsh/script/fzh.sh" ] && source "${HOME}/.config/zsh/script/fzh.sh"
-# fzd
-[ -f "${HOME}/.config/zsh/script/fzd.sh" ] && source "${HOME}/.config/zsh/script/fzd.sh"
+if command -v lazygit &>/dev/null
+then
+  alias lazygit="lazygit -ucd ${HOME}/.config/lazygit"
+  alias lg="lazygit -ucd ${HOME}/.config/lazygit"
+fi
 
 # Show terminal 256 color map
 terminal-colors () {

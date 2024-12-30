@@ -1,6 +1,7 @@
 # Path
 export PATH="$HOME/.local/share/nvim/dapinstall/dnetcs_dbg/netcoredbg:$PATH"
 export PATH="$HOME/.local/bin:$HOME/.dotnet:$HOME/.dotnet/tools:$HOME/.cargo/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Locales
 # if [ "$(uname)" != "Darwin" ]

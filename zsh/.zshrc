@@ -28,18 +28,6 @@ bindkey -M menuselect 'l' vi-forward-char
 # Source files
 # ------------
 
-# Aliases
-[ -f "$HOME/.config/zsh/script/alias.sh" ] &&
-	source "$HOME/.config/zsh/script/alias.sh"
-
-# Tmux projects
-[ -f "$HOME/.config/tmux/aliases.sh" ] &&
-	source "$HOME/.config/tmux/aliases.sh"
-
-# Z
-[ -f "$HOME/.config/zsh/script/z.sh" ] &&
-	source "$HOME/.config/zsh/script/z.sh"
-
 # macOS vs. Linux
 if [[ $(uname) == "Darwin" ]]; then
   ZSH_PLUGINS_DIR="$(brew --prefix)/share"
@@ -51,26 +39,11 @@ else
 fi
 
 # Syntax highlighting
-[ -f "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] &&
+[ -f "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ] && \
 	source "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # Autosuggestions
-[ -f "$ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh" ] &&
+[ -f "$ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh" ] && \
 	source "$ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-# Terminal true color test
-[ -z "$TMUX" ] && [ -f $HOME/.config/zsh/script/truecolor-test.sh ] && /bin/bash $HOME/.config/zsh/script/truecolor-test.sh
-# If not TMUX session and neofetch or fastfetch is installed, show system info
-[ -z "$TMUX" ] && which neofetch 1>/dev/null 2>&1 && echo " " && neofetch
-[ -z "$TMUX" ] && which fastfetch 1>/dev/null 2>&1 && echo " " && fastfetch && alias neofetch="fastfetch"
-
-# Zoxide, if exists
-if command -v zoxide &>/dev/null
-then
-	mkdir -p "$HOME/.cache/zoxide"
-	_ZO_DATA_DIR="$HOME/.cache/zoxide"
-	_ZO_RESOLVE_SYMLINKS=1
-	eval "$(zoxide init zsh)"
-fi
 
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
@@ -81,5 +54,27 @@ if (which fnm 1>/dev/null 2>&1); then
   eval "$(fnm env --use-on-cd)"
 fi
 
+# Aliases
+[ -f "$HOME/.config/zsh/script/alias.sh" ] && \
+  source "$HOME/.config/zsh/script/alias.sh"
+
+# Zoxide, if exists
+if command -v zoxide &>/dev/null
+then
+	mkdir -p "$HOME/.cache/zoxide"
+	_ZO_DATA_DIR="$HOME/.cache/zoxide"
+	_ZO_RESOLVE_SYMLINKS=1
+	eval "$(zoxide init zsh)"
+fi
+
 # Apply FZF config if it exists
-[ -f "${HOME}/.config/fzf/fzf-config.sh" ] && source "${HOME}/.config/fzf/fzf-config.sh"
+[ -f "${HOME}/.config/fzf/fzf-config.sh" ] && \
+  source "${HOME}/.config/fzf/fzf-config.sh"
+
+# Tmux projects
+[ -f "$HOME/.config/tmux/aliases.sh" ] && \
+  source "$HOME/.config/tmux/aliases.sh"
+
+# Z
+[ -f "$HOME/.config/zsh/script/z.sh" ] && \
+  source "$HOME/.config/zsh/script/z.sh"
