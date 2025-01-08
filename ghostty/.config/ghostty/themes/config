@@ -4,8 +4,18 @@
 #theme = catppuccin-mocha
 theme = dark:catppuccin-mocha,light:catppuccin-latte
 
-# macOS titlebar 
+# macOS titlebar: transparent, hidden, ...
 macos-titlebar-style=transparent
 
 # Mouse cursor behaviour
 mouse-hide-while-typing = true
+
+# confirm Ghostty close
+confirm-close-surface = false
+
+# Window style
+# window-decoration = true
+# window-padding-x = 10
+# window-padding-y = 10
+# window-padding-balance = true
+
