@@ -1,4 +1,4 @@
-/Users/bergmanpasi/.local/share/fnm/node-versions/v16.20.2/installation/lib
-├── corepack@0.17.0
-└── npm@8.19.4
+/Users/pasi/.local/share/fnm/node-versions/v18.20.8/installation/lib
+├── corepack@0.32.0
+└── npm@10.8.2
 
