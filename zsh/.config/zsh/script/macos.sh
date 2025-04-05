@@ -135,33 +135,34 @@ flushdns() {
 }
 
 packages() {
+  COMPUTER_NAME=$(scutil --get ComputerName)
   SETUP_FOLDER="$HOME/.config/setup/macos"
   [ -d "$SETUP_FOLDER" ] || mkdir -p "$SETUP_FOLDER"
 
-  brew bundle dump --file="${SETUP_FOLDER}/macos-brew-bundle-dump.txt" --force
+  brew bundle dump --file="${SETUP_FOLDER}/${COMPUTER_NAME}-brew-bundle-dump.txt" --force
   echo "Brew bundle dump"
   echo "----------------------------------------------"
-  cat "$SETUP_FOLDER/macos-brew-bundle-dump.txt"
+  cat "$SETUP_FOLDER/${COMPUTER_NAME}-brew-bundle-dump.txt"
   echo ""
   echo "Copy macOS settings"
   echo "----------------------------------------------"
-  defaults read | tee "${SETUP_FOLDER}/macos-defaults.txt"
+  defaults read | tee "${SETUP_FOLDER}/${COMPUTER_NAME}-defaults.txt"
   echo ""
   echo "List of NPM global applications"
   echo "----------------------------------------------"
-  npm list -g --depth 0 | tee "${SETUP_FOLDER}/macos-npm-global-packages.txt"
+  npm list -g --depth 0 | tee "${SETUP_FOLDER}/${COMPUTER_NAME}-npm-global-packages.txt"
   echo ""
   echo "List of Python 3 libraries"
   echo "----------------------------------------------"
-  python3 -m pip list --format freeze | tee "${SETUP_FOLDER}/macos-python3-pip.txt"
+  python3 -m pip list --format freeze | tee "${SETUP_FOLDER}/${COMPUTER_NAME}-python3-pip.txt"
   echo ""
   echo "List of Lua packages (luarocks)"
   echo "----------------------------------------------"
-  luarocks list | tee "${SETUP_FOLDER}/macos-luarocks.txt"
+  luarocks list | tee "${SETUP_FOLDER}/${COMPUTER_NAME}-luarocks.txt"
   echo ""
   echo "List Rust Cargo packages"
   echo "----------------------------------------------"
-  cargo install --list | tee "${SETUP_FOLDER}/macos-rust-cargo.txt"
+  cargo install --list | tee "${SETUP_FOLDER}/${COMPUTER_NAME}-rust-cargo.txt"
   echo ""
 }
 
